@@ -1,6 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2b914bcf_002Df250_002D49fa_002D9182_002D5ca84391d7c4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenTheSystemHasNoQuotes_WhenGettingQuotes_ThenWeSeeNoQuotesReturned" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
