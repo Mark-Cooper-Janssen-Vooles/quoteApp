@@ -1,0 +1,5 @@
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\obj\Debug\netcoreapp3.1\quoteAPI.csprojAssemblyReference.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\obj\Debug\netcoreapp3.1\quoteAPI.AssemblyInfoInputs.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\obj\Debug\netcoreapp3.1\quoteAPI.AssemblyInfo.cs
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\obj\Debug\netcoreapp3.1\quoteAPI.csproj.CoreCompileInputs.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\obj\Debug\netcoreapp3.1\quoteAPI.MvcApplicationPartsAssemblyInfo.cache
