@@ -1,11 +1,11 @@
-namespace QuoteAPI.Models
+namespace QuoteAPI.Models.Quote
 {
-    public class QuoteItem
+    public class Item
     {
         public string Message { get; }
         public double Price { get; private set; }
 
-        public QuoteItem(string message, double price)
+        public Item(string message, double price )
         {
             Message = message;
             Price = price;

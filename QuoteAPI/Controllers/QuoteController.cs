@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using QuoteAPI.Models;
+using QuoteAPI.Models.Quote;
 
 namespace QuoteAPI
 {
@@ -21,13 +22,13 @@ namespace QuoteAPI
 
         public Quote GetQuote(Guid id)
         {
-            return QuoteList.FirstOrDefault(x => x.Id == id);
+            return QuoteList.FirstOrDefault(x => x.GetQuoteId() == id);
         }
 
-        public void AddItemToQuote(Guid quoteId, QuoteItem newQuoteItem)
+        public void AddItemToQuote(Guid quoteId, Item newItem)
         {
             var quote = GetQuote(quoteId);
-            quote.AddQuoteItem(newQuoteItem);
+            quote.AddQuoteItem(newItem);
         }
 
         public void UpdateQuoteItemPrice(Guid quoteId, string quoteItemMessage, double newPrice)

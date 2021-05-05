@@ -1,45 +1,9 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=19812009_002Dad55_002D4ba2_002Dad7a_002D60427c8913c4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteExits_WhenGetQuoteById_ThenReturnQuote" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExits_WhenGetQuoteById_ThenReturnQuote&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteDoesntExist_WhenItemAdded_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=298b4f8b_002Db9f1_002D4b7b_002Db53b_002De0ee0fa3ab0a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests" Presentation="&amp;lt;QuoteAPI.Tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1c4b5c8c_002De2b8_002D4185_002D85d6_002Dd1787f6f9ae9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2e2e72fc_002D7a83_002D4d3e_002Da7d2_002Dc9a3d15efcc5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExists_WhenItemAddedToQuoteTwice_ThenQuoteShouldHaveOnlyOneItem&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteItemExists_WhenIUpdateThePrice_ThenQuoteItemHasTheNewPrice&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=35a94875_002D5226_002D46d6_002Db1b5_002D4ec61fbeb014/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteDoesntExist_WhenItemAdded_ThenQuoteShouldHaveItem #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteDoesntExist_WhenItemAdded_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=70aa7494_002D70f1_002D4d36_002D9b0b_002D2b1b09b4fce2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteDoesntExist_WhenItemAdded_ThenQuoteShouldHaveItem #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExits_WhenGetQuoteById_ThenReturnQuote&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7c300b0c_002D92a2_002D4845_002D8cd1_002D2c79f85d4454/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b516dcca_002D3c98_002D4f0a_002Dbe96_002Dfcccc62c5e00/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteDoesntExist_WhenItemAdded_ThenQuoteShouldHaveItem" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteDoesntExist_WhenItemAdded_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=de3e5b49_002Df526_002D4601_002D9404_002Dbfa876be8914/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteDoesntExist_WhenItemAdded_ThenQuoteShouldHaveItem #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=eaa68f30_002D1059_002D4763_002Db502_002Db599d5400c14/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1.GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.QuoteTest.GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
