@@ -1,39 +1,39 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using QuoteAPI.Models;
 
 namespace QuoteAPI
 {
     public class QuoteController
     {
         private List<Quote> QuoteList { get; }
-        private List<DraftQuote> DraftQuoteList { get; }
 
-        public QuoteController(IEnumerable<Quote> quoteList, IEnumerable<DraftQuote> draftQuoteList)
+        public QuoteController(IEnumerable<Quote> quoteList)
         {
             QuoteList = quoteList.ToList();
-            DraftQuoteList = draftQuoteList.ToList();
         }
 
         public IEnumerable<Quote> GetQuotes()
         {
             return QuoteList;
         }
-        
-        public IEnumerable<DraftQuote> GetDraftQuotes()
+
+        public Quote GetQuote(Guid id)
         {
-            return DraftQuoteList;
+            return QuoteList.FirstOrDefault(x => x.Id == id);
         }
 
-        public void SaveDraftQuote(DraftQuote draftQuote)
+        public void AddItemToQuote(Guid quoteId, QuoteItem newQuoteItem)
         {
-            DraftQuoteList.Add(draftQuote);
+            var quote = GetQuote(quoteId);
+            quote.AddQuoteItem(newQuoteItem);
         }
-        
-        // think about API for when draft quote finalised to normal quote
-        public void AddQuote(DraftQuote draftQuote)
+
+        public void UpdateQuoteItemPrice(Guid quoteId, string quoteItemMessage, double newPrice)
         {
-            DraftQuoteList.Remove(draftQuote);
-            QuoteList.Add(new Quote(draftQuote.Message));
+            var quote = GetQuote(quoteId);
+            quote.UpdatePriceOnQuoteItem(quoteItemMessage, newPrice);
         }
     }
 }

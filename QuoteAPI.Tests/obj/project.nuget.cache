@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hhcdJB/SBuFXeFiJU5m4aq+I2NMuILU4IMJN/aBiGn9Bzdy5YqwOxQUhPQFAAMNCbhVPSw7Ft/6PhqZGCncT9Q==",
+  "dgSpecHash": "cJM0MwtAEo/zN4Hm8LMoPPTZGJx0tjUQeng9fTUS+yARXzfc58e0WmBEImlJl6+CLPHBq5kV4lVFe46hBJlCBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI.Tests\\QuoteAPI.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
+    "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\deepequal\\2.0.0\\deepequal.2.0.0.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
-    "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DeepEqual.Syntax;
+using QuoteAPI.Models;
 using Xunit;
 
 namespace QuoteAPI.Tests
@@ -12,7 +14,7 @@ namespace QuoteAPI.Tests
         {
             //arrange
             var QuoteList = new List<Quote>();
-            var controller = new QuoteController(QuoteList, new List<DraftQuote>());
+            var controller = new QuoteController(QuoteList);
             
             //act 
             var listOfQuotes = controller.GetQuotes();
@@ -25,8 +27,8 @@ namespace QuoteAPI.Tests
         public void GivenTheSystemHasQuotes_WhenGettingQuotes_ThenWeSeeQuotesReturned()
         {
             //arrange
-            var QuoteList = new List<Quote> {new Quote("test")};
-            var controller = new QuoteController(QuoteList, new List<DraftQuote>());
+            var QuoteList = new List<Quote> {new Quote(Guid.NewGuid(), new List<QuoteItem>())};
+            var controller = new QuoteController(QuoteList);
             
             //act
             var listOfQuotes = controller.GetQuotes();
@@ -34,48 +36,95 @@ namespace QuoteAPI.Tests
             //assert
             Assert.NotEmpty(listOfQuotes);
         }
-
+        
         [Fact]
-        public void Given_WhenDraftQuoteCreated_ThenShouldBeSaved()
+        public void GivenQuoteExits_WhenGetQuoteById_ThenReturnQuote()
         {
             //arrange
-            var draftQuote = new DraftQuote("Draft Quote");
-            var quoteList = new List<DraftQuote>();
-            var controller = new QuoteController(new List<Quote>(), quoteList);
+            var quote = new Quote(Guid.NewGuid(), new List<QuoteItem>());
+            var controller = new QuoteController(new List<Quote>() {quote});
             
             //act
-            controller.SaveDraftQuote(draftQuote);
-            
+            var returnedQuote = controller.GetQuote(quote.Id);
+
             //assert
-            var listOfQuotes = controller.GetDraftQuotes();
-            Assert.Contains(draftQuote, listOfQuotes);
+            Assert.Equal(returnedQuote, quote);
         }
         
-        // homework: think about API for when draft quote finalised to normal quote
         [Fact]
-        public void GivenDraftQuoteIsFinalised_WhenAddedAsNormalQuote_ThenShouldBeSaved()
+        public void GivenQuoteDoesntExist_WhenGetQuoteById_ThenReturnNull()
         {
             //arrange
-            var draftQuote = new DraftQuote("finalised draft Quote");
-            var controller = new QuoteController(new List<Quote>(), new List<DraftQuote>() {draftQuote} );
+            var controller = new QuoteController(new List<Quote>() {});
+            
+            //act
+            var returnedQuote = controller.GetQuote(Guid.NewGuid());
+            
+            //assert
+            Assert.Null(returnedQuote);
+        }
+
+        [Fact]
+        public void GivenQuoteExists_WhenItemAddedToQuote_ThenQuoteShouldHaveItem()
+        {
+            //arrange
+            var quoteGuid = Guid.NewGuid();
+            var quote = new Quote(quoteGuid, new List<QuoteItem>() { new QuoteItem( "test", 10.00 ) } );
+            var newQuoteItem = new QuoteItem("Labour", 10.00);
+            var expectedQuote = new Quote(quoteGuid, new List<QuoteItem>() { new QuoteItem( "test", 10.00 ), newQuoteItem });
+            
+            var controller = new QuoteController(new List<Quote>() { quote });
 
             //act
-            controller.AddQuote(draftQuote);
+            controller.AddItemToQuote(quote.Id, newQuoteItem);
+            var actualQuote = controller.GetQuote(quote.Id);
 
             //assert
-            var listOfDraftQuotes = controller.GetDraftQuotes();
-            var listOfQuotes = controller.GetQuotes();
-            Assert.DoesNotContain(draftQuote, listOfDraftQuotes);
-            Assert.Empty(listOfDraftQuotes);
-            Assert.NotEmpty(listOfQuotes);
+            Assert.True(expectedQuote.IsDeepEqual(actualQuote));
+        }
+
+        [Fact] public void GivenQuoteExists_WhenItemAddedToQuoteTwice_ThenQuoteShouldHaveOnlyOneItem()
+        {
+            //arrange
+            var quoteGuid = Guid.NewGuid();
+            var quote = new Quote(quoteGuid, new List<QuoteItem>() { new QuoteItem( "test", 10.00 ) } );
+            var newQuoteItem = new QuoteItem("Labour", 10.00);
+            var expectedQuote = new Quote(quoteGuid, new List<QuoteItem>() { new QuoteItem( "test", 10.00 ), newQuoteItem });
+            
+            var controller = new QuoteController(new List<Quote>() { quote });
+
+            //act
+            controller.AddItemToQuote(quote.Id, newQuoteItem);
+            controller.AddItemToQuote(quote.Id, newQuoteItem);
+            var actualQuote = controller.GetQuote(quote.Id);
+
+            //assert
+            Assert.True(expectedQuote.IsDeepEqual(actualQuote));
         }
         
+        [Fact] public void GivenQuoteItemExists_WhenIUpdateThePrice_ThenQuoteItemHasTheNewPrice()
+        {
+            //arrange
+            var quoteGuid = Guid.NewGuid();
+            var quoteItem = new QuoteItem( "test", 10.00 );
+            var quote = new Quote(quoteGuid, new List<QuoteItem>() {quoteItem} );
+            var expectedQuote = new Quote(quoteGuid, new List<QuoteItem>() { new QuoteItem( "test", 20.00 ) });
+            
+            var controller = new QuoteController(new List<Quote>() { quote });
+
+            //act
+            controller.UpdateQuoteItemPrice(quote.Id, quoteItem.Message, 20.00);
+            
+            var actualQuote = controller.GetQuote(quote.Id);
+
+            //assert
+            Assert.True(expectedQuote.IsDeepEqual(actualQuote));
+        }
+
+
         // ideas for more tests:
         
-        // add draft quote? 
-        // edit existing quote 
-        // edit existing draft quote
         // delete quote 
-        // delete draft quote
+
     }
 }

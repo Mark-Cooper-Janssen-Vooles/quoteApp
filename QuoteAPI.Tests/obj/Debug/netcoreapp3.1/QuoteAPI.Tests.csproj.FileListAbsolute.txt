@@ -100,3 +100,4 @@ C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests\bi
 C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests\bin\Debug\netcoreapp3.1\QuoteAPI.exe
 C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests\bin\Debug\netcoreapp3.1\QuoteAPI.dll
 C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests\bin\Debug\netcoreapp3.1\QuoteAPI.pdb
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests\bin\Debug\netcoreapp3.1\DeepEqual.dll
