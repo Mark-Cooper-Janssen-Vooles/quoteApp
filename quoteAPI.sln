@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteAPI.Tests", "QuoteAPI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteAPI", "QuoteAPI\QuoteAPI.csproj", "{79EE781B-C289-4D5D-B6AD-4828B172A17A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emailer", "Emailer\Emailer.csproj", "{903BC6C4-8169-435E-AEDE-769500E96A32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A4DD5D47-1468-4D90-82A8-C42E715790CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{79EE781B-C289-4D5D-B6AD-4828B172A17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79EE781B-C289-4D5D-B6AD-4828B172A17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79EE781B-C289-4D5D-B6AD-4828B172A17A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903BC6C4-8169-435E-AEDE-769500E96A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903BC6C4-8169-435E-AEDE-769500E96A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903BC6C4-8169-435E-AEDE-769500E96A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903BC6C4-8169-435E-AEDE-769500E96A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4DD5D47-1468-4D90-82A8-C42E715790CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4DD5D47-1468-4D90-82A8-C42E715790CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4DD5D47-1468-4D90-82A8-C42E715790CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4DD5D47-1468-4D90-82A8-C42E715790CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Http.Features;
 
-namespace QuoteAPI.Models.Quote
+namespace Domain.Models.Quote
 {
     public class Quote
     {
@@ -60,6 +59,11 @@ namespace QuoteAPI.Models.Quote
 
             DraftItems.RemoveAll(x => x.Message == item.Message);
             Items.Add(item);
+        }
+
+        public void Finalise()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,17 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using QuoteAPI.Models;
-using QuoteAPI.Models.Quote;
+using System.Threading.Tasks;
+using Domain.Events;
+using Domain.Models.Quote;
+using MediatR;
 
 namespace QuoteAPI
 {
     public class QuoteController
     {
         private List<Quote> QuoteList { get; }
+        private IEventBus _eventBus { get; }
 
-        public QuoteController(IEnumerable<Quote> quoteList)
+        public QuoteController(IEnumerable<Quote> quoteList, IEventBus eventBus)
         {
+            _eventBus = eventBus;
             QuoteList = quoteList.ToList();
         }
 
@@ -36,5 +40,16 @@ namespace QuoteAPI
             var quote = GetQuote(quoteId);
             quote.UpdatePriceOnQuoteItem(quoteItemMessage, newPrice);
         }
+
+        public async Task SendQuote(Guid quoteId)
+        {
+            var quote = GetQuote(quoteId);
+            await _eventBus.Publish(new QuoteSent(quote, "example@example.com"));
+        }
+    }
+
+    public interface IEventBus
+    {
+        Task Publish(QuoteSent quoteSent);
     }
 }

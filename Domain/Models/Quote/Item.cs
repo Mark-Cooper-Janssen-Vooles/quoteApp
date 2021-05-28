@@ -1,4 +1,4 @@
-namespace QuoteAPI.Models.Quote
+namespace Domain.Models.Quote
 {
     public class Item
     {

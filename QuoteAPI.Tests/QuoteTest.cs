@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DeepEqual.Syntax;
-using QuoteAPI.Models;
-using QuoteAPI.Models.Quote;
+using Domain.Models.Quote;
 using Xunit;
 
 namespace QuoteAPI.Tests

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "leDJqviWkUe1j2gePXCdrQNjRnDNpGtEyLZN+9uLlKi8dks6g0E5iyeejjMSZt88XuNsEWRpbRldaEdRAwfIUA==",
+  "dgSpecHash": "bKBnzHNU8FhKfTEFg6tu45zDogPWNxr+RAbPp1hgR74BdDCrnwKYqFRDjN4dnjyplT8K/GOCo+xFIt683bwY/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI\\QuoteAPI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

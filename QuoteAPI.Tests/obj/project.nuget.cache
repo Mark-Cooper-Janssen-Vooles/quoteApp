@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cJM0MwtAEo/zN4Hm8LMoPPTZGJx0tjUQeng9fTUS+yARXzfc58e0WmBEImlJl6+CLPHBq5kV4lVFe46hBJlCBw==",
+  "dgSpecHash": "ZqoR8pJ7OuV+QmAmejbwi3pNdcGl+8TjLkmhP+W4uJUgXHTRa0V+FAelGSpXsES/zszEQjtSkL+ewoA1ta6+og==",
   "success": true,
   "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI.Tests\\QuoteAPI.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\deepequal\\2.0.0\\deepequal.2.0.0.nupkg.sha512",
+    "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",

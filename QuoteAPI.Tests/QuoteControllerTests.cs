@@ -1,13 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DeepEqual.Syntax;
-using QuoteAPI.Models;
-using QuoteAPI.Models.Quote;
+using Domain.Events;
+using Domain.Models.Quote;
 using Xunit;
 
 namespace QuoteAPI.Tests
 {
+    public class FakeEventBus : IEventBus
+    {
+        public async Task Publish(QuoteSent quoteSent) { }
+    }
+
     public class UnitTest1
     {
         [Fact]
@@ -15,7 +21,7 @@ namespace QuoteAPI.Tests
         {
             //arrange
             var QuoteList = new List<Quote>();
-            var controller = new QuoteController(QuoteList);
+            var controller = new QuoteController(QuoteList, new FakeEventBus());
 
             //act
             var listOfQuotes = controller.GetQuotes();
@@ -29,7 +35,7 @@ namespace QuoteAPI.Tests
         {
             //arrange
             var QuoteList = new List<Quote> {new Quote(Guid.NewGuid(), new List<Item>())};
-            var controller = new QuoteController(QuoteList);
+            var controller = new QuoteController(QuoteList, new FakeEventBus());
 
             //act
             var listOfQuotes = controller.GetQuotes();
@@ -43,7 +49,7 @@ namespace QuoteAPI.Tests
         {
             //arrange
             var quote = new Quote(Guid.NewGuid(), new List<Item>());
-            var controller = new QuoteController(new List<Quote>() {quote});
+            var controller = new QuoteController(new List<Quote>() {quote}, new FakeEventBus());
 
             //act
             var returnedQuote = controller.GetQuote(quote.GetQuoteId());
@@ -56,7 +62,7 @@ namespace QuoteAPI.Tests
         public void GivenQuoteDoesntExist_WhenGetQuoteById_ThenReturnNull()
         {
             //arrange
-            var controller = new QuoteController(new List<Quote>() {});
+            var controller = new QuoteController(new List<Quote>() {}, new FakeEventBus());
 
             //act
             var returnedQuote = controller.GetQuote(Guid.NewGuid());
@@ -74,7 +80,7 @@ namespace QuoteAPI.Tests
             var newQuoteItem = new Item("Labour", 10.00);
             var expectedQuote = new Quote(quoteGuid, new List<Item>() { new Item( "test", 10.00 ), newQuoteItem });
 
-            var controller = new QuoteController(new List<Quote>() { quote });
+            var controller = new QuoteController(new List<Quote>() { quote }, new FakeEventBus());
 
             //act
             controller.AddItemToQuote(quote.GetQuoteId(), newQuoteItem);
@@ -93,7 +99,7 @@ namespace QuoteAPI.Tests
             var newQuoteItem = new Item("Labour", 10.00);
             var expectedQuote = new Quote(quoteGuid, new List<Item>() { new Item( "test", 10.00 ), newQuoteItem });
 
-            var controller = new QuoteController(new List<Quote>() { quote });
+            var controller = new QuoteController(new List<Quote>() { quote }, new FakeEventBus());
 
             //act
             controller.AddItemToQuote(quote.GetQuoteId(), newQuoteItem);
@@ -113,7 +119,7 @@ namespace QuoteAPI.Tests
             var quote = new Quote(quoteGuid, new List<Item>() {quoteItem} );
             var expectedQuote = new Quote(quoteGuid, new List<Item>() { new Item( "test", 20.00 ) });
 
-            var controller = new QuoteController(new List<Quote>() { quote });
+            var controller = new QuoteController(new List<Quote>() { quote }, new FakeEventBus());
 
             //act
             controller.UpdateQuoteItemPrice(quote.GetQuoteId(), quoteItem.Message, 20.00);
