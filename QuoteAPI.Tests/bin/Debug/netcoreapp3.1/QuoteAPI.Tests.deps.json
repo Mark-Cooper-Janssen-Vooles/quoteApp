@@ -19,6 +19,25 @@
           "QuoteAPI.Tests.dll": {}
         }
       },
+      "AWSSDK.Core/3.7.0.36": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.0.36"
+          }
+        }
+      },
+      "AWSSDK.SQS/3.7.0.35": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.0.36"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SQS.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.0.35"
+          }
+        }
+      },
       "coverlet.collector/1.2.0": {},
       "DeepEqual/2.0.0": {
         "dependencies": {
@@ -28,6 +47,14 @@
           "lib/netcoreapp2.1/DeepEqual.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "MediatR/9.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
           }
         }
       },
@@ -682,7 +709,18 @@
           "Microsoft.NET.Test.Sdk": "16.5.0"
         }
       },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
+        }
+      },
       "QuoteAPI/1.0.0": {
+        "dependencies": {
+          "AWSSDK.SQS": "3.7.0.35",
+          "Domain": "1.0.0",
+          "MediatR": "9.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
         "runtime": {
           "QuoteAPI.dll": {}
         }
@@ -694,6 +732,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.7.0.36": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Av9aSxxA2l/1iIXjyF5Wj0s8rhTxbsdmiM85hh+J9yJC5377kzIIfmgsAWefrJGfZilBB2k2HtgFJKA0ZzpJUA==",
+      "path": "awssdk.core/3.7.0.36",
+      "hashPath": "awssdk.core.3.7.0.36.nupkg.sha512"
+    },
+    "AWSSDK.SQS/3.7.0.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/MfdFaa+uw6l1wyoyNJZ8ilF3hsJR+RSYmRL2Jogs1ZdmuvTB2HeaXh0YqBhMTki83Ty9UdV8wdy3wLdsRfs6g==",
+      "path": "awssdk.sqs/3.7.0.35",
+      "hashPath": "awssdk.sqs.3.7.0.35.nupkg.sha512"
     },
     "coverlet.collector/1.2.0": {
       "type": "package",
@@ -708,6 +760,13 @@
       "sha512": "sha512-f3SSC6jpBHASh9ga92clvuXPNj4uKM7YvEuVlkXcb40Ks7lkQllaRoAz8tLC0vCcpIHV4vxNirmu0458IVas6Q==",
       "path": "deepequal/2.0.0",
       "hashPath": "deepequal.2.0.0.nupkg.sha512"
+    },
+    "MediatR/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "path": "mediatr/9.0.0",
+      "hashPath": "mediatr.9.0.0.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/16.5.0": {
       "type": "package",
@@ -1051,6 +1110,11 @@
       "sha512": "sha512-3eq5cGXbEJkqW9nwLuXwtxy9B5gMA8i7HW4rN63AhAvy5UvEcQbZnve23wx/oPrkyg/4CbfNhxkBezS0b1oUdQ==",
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "QuoteAPI/1.0.0": {
       "type": "project",

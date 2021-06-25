@@ -1,0 +1,9 @@
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Domain\obj\Debug\netcoreapp3.1\Domain.pdb

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZqoR8pJ7OuV+QmAmejbwi3pNdcGl+8TjLkmhP+W4uJUgXHTRa0V+FAelGSpXsES/zszEQjtSkL+ewoA1ta6+og==",
+  "dgSpecHash": "RaPEmHBsj9wmr/10DqERRtZHdD2rSk6rE23w8m+aVXE77g2FsiuNogf+rUsWrxFmoSB7upTAopOM7bt0KDjL1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI.Tests\\QuoteAPI.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\awssdk.core\\3.7.0.36\\awssdk.core.3.7.0.36.nupkg.sha512",
+    "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\awssdk.sqs\\3.7.0.35\\awssdk.sqs.3.7.0.35.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\deepequal\\2.0.0\\deepequal.2.0.0.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",

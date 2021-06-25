@@ -1,0 +1,15 @@
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\bin\Debug\netcoreapp3.1\Emailer.exe
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\bin\Debug\netcoreapp3.1\Emailer.deps.json
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\bin\Debug\netcoreapp3.1\Emailer.runtimeconfig.json
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\bin\Debug\netcoreapp3.1\Emailer.runtimeconfig.dev.json
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\bin\Debug\netcoreapp3.1\Emailer.dll
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\bin\Debug\netcoreapp3.1\Emailer.pdb
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.csprojAssemblyReference.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.AssemblyInfoInputs.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.AssemblyInfo.cs
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.csproj.CoreCompileInputs.cache
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.csproj.CopyComplete
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.dll
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.pdb
+C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\Emailer\obj\Debug\netcoreapp3.1\Emailer.genruntimeconfig.cache

@@ -187,9 +187,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AWSSDK.SQS": {
+              "target": "Package",
+              "version": "[3.7.0.35, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
             }
           },
           "imports": [

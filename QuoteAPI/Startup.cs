@@ -26,6 +26,7 @@ namespace QuoteAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IEventBus, EventBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

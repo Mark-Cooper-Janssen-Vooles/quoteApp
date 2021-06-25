@@ -8,7 +8,6 @@ namespace Domain.Models.Quote
     {
         private Guid Id { get; }
         private List<Item> Items { get; }
-
         private List<Item> DraftItems { get; }
 
         public Quote(Guid id, List<Item> items)
