@@ -45,30 +45,30 @@ namespace QuoteAPI
             _repository.Save(quote);
         }
 
-        [HttpPost("updatequoteitemprice/{quoteId}")]
-        public void UpdateQuoteItemPrice(Guid quoteId, string quoteItemMessage, double newPrice)
+        [HttpPost("updateQuoteItemPrice/{quoteId}")]
+        public void UpdateQuoteItemPrice(Guid id, string quoteItemMessage, double newPrice)
         {
-            //var quote = GetQuote(quoteId);
-            var quote = new Quote(quoteId, new List<Item>(), new Contact("test", "example@example.com"));
+            var quote = _repository.GetQuote(id);
             quote.UpdatePriceOnQuoteItem(quoteItemMessage, newPrice);
+            _repository.Save(quote);
         }
 
-        [HttpPost("sendquote/{quoteId}")]
-        public async Task SendQuote(Guid quoteId)
+        [HttpPost("sendQuote/{quoteId}")]
+        public async Task SendQuote(Guid id)
         {
-            // validate quote is a real quote, log if not
-            //var quote = GetQuote(quoteId);
-            var quote = new Quote(quoteId, new List<Item>{ new Item(new Guid(),"fixed bench", 20.00) }, new Contact("test", "example@example.com"));
-            await _eventBus.Publish(new QuoteSent(quote, "example@example.com"));
+            var quote = _repository.GetQuote(id);
+            if (quote.Id != Guid.Empty)
+            {
+                await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
+            }
         }
 
         [HttpPost("updateContact/{quoteId}")]
-        public async Task UpdateContact(Guid quoteId)
+        public void UpdateContact(Guid id, Contact contact)
         {
-            var quote = new Quote( quoteId, new List<Item>(), new Contact("test", "example@example.com")); //get existing quote from db
-
-            // quote stuff sent through headers
-            quote.EditContact(new Contact("kevin rud", "kevin07@hotmail.com"));
+            var quote = _repository.GetQuote(id);
+            quote.EditContact(contact);
+            _repository.Save(quote);
         }
     }
 

@@ -6,7 +6,7 @@ namespace Domain.Models.Quote
 {
     public class Quote
     {
-        private Contact Contact { get; }
+        public Contact Contact { get; }
         public Guid Id { get; }
         private List<Item> Items { get; }
         private List<Item> DraftItems { get; }
