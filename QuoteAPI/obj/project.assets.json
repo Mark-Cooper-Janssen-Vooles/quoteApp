@@ -2771,11 +2771,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\matt_ddd2\\quoteapi\\quoteapi\\QuoteAPI.csproj",
+      "projectUniqueName": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI\\QuoteAPI.csproj",
       "projectName": "QuoteAPI",
-      "projectPath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\matt_ddd2\\quoteapi\\quoteapi\\QuoteAPI.csproj",
+      "projectPath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI\\QuoteAPI.csproj",
       "packagesPath": "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\matt_ddd2\\quoteapi\\quoteapi\\obj\\",
+      "outputPath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2795,8 +2795,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\matt_ddd2\\quoteapi\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\matt_ddd2\\quoteapi\\Domain\\Domain.csproj"
+            "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\Domain\\Domain.csproj"
             }
           }
         }
@@ -2841,7 +2841,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

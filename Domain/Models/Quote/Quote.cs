@@ -6,15 +6,23 @@ namespace Domain.Models.Quote
 {
     public class Quote
     {
-        private Guid Id { get; }
+        private Contact Contact { get; }
+        public Guid Id { get; }
         private List<Item> Items { get; }
         private List<Item> DraftItems { get; }
 
-        public Quote(Guid id, List<Item> items)
+        public Quote(Guid id, List<Item> items, Contact contact)
         {
             Items = items;
+            Contact = contact;
             Id = id;
             DraftItems = new List<Item>();
+        }
+
+        public void EditContact(Contact newContact)
+        {
+            Contact.Name = newContact.Name;
+            Contact.Email = newContact.Email;
         }
 
         public void AddQuoteItem(Item newItem)

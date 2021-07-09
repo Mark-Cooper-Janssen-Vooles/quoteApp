@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eWrThvPQIJ9Rrmqa7ezaq3AG4w+3Ud/PW0DVjdLwcscFu0mqqdwoVtQArfC3to1Bftxai3DlyNGQenNC7EKbxA==",
+  "dgSpecHash": "El0RgbzzyJVmvlY/9xyn9KxQFQTDfwvGTLsxKisLxBrHqyARmdO4FJtp7ZITEmuYm0OSuggaAJL+x/4EDj7lHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\matt_ddd2\\quoteapi\\quoteapi\\QuoteAPI.csproj",
+  "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\QuoteAPI\\QuoteAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\awssdk.core\\3.7.0.36\\awssdk.core.3.7.0.36.nupkg.sha512",
     "C:\\Users\\mark.janssen-vooles\\.nuget\\packages\\awssdk.sqs\\3.7.0.35\\awssdk.sqs.3.7.0.35.nupkg.sha512",

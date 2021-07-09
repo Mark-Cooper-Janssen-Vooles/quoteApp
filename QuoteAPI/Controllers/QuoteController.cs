@@ -11,6 +11,7 @@ using Domain.Models.Quote;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using QuoteAPI.DataAccessLayer;
 
 namespace QuoteAPI
 {
@@ -18,36 +19,37 @@ namespace QuoteAPI
     [ApiController]
     public class QuoteController : ControllerBase
     {
-        private List<Quote> QuoteList { get; }
-        private IEventBus _eventBus { get; }
+        private readonly IRepository _repository;
+        private readonly IEventBus _eventBus;
 
-        public QuoteController(IEnumerable<Quote> quoteList, IEventBus eventBus)
+        public QuoteController(IRepository repository, IEventBus eventBus)
         {
+            _repository = repository;
             _eventBus = eventBus;
-            QuoteList = quoteList.ToList();
         }
 
         public IEnumerable<Quote> GetQuotes()
         {
-            return QuoteList;
+            return _repository.GetQuotes();
         }
 
         public Quote GetQuote(Guid id)
         {
-            return QuoteList.FirstOrDefault(x => x.GetQuoteId() == id);
+            return _repository.GetQuote(id);
         }
 
-        public void AddItemToQuote(Guid quoteId, Item newItem)
+        public void AddItemToQuote(Guid id, Item newItem)
         {
-            var quote = GetQuote(quoteId);
+            var quote = _repository.GetQuote(id);
             quote.AddQuoteItem(newItem);
+            _repository.Save(quote);
         }
 
         [HttpPost("updatequoteitemprice/{quoteId}")]
         public void UpdateQuoteItemPrice(Guid quoteId, string quoteItemMessage, double newPrice)
         {
             //var quote = GetQuote(quoteId);
-            var quote = new Quote(quoteId, new List<Item>());
+            var quote = new Quote(quoteId, new List<Item>(), new Contact("test", "example@example.com"));
             quote.UpdatePriceOnQuoteItem(quoteItemMessage, newPrice);
         }
 
@@ -56,8 +58,17 @@ namespace QuoteAPI
         {
             // validate quote is a real quote, log if not
             //var quote = GetQuote(quoteId);
-            var quote = new Quote(quoteId, new List<Item>());
+            var quote = new Quote(quoteId, new List<Item>{ new Item(new Guid(),"fixed bench", 20.00) }, new Contact("test", "example@example.com"));
             await _eventBus.Publish(new QuoteSent(quote, "example@example.com"));
+        }
+
+        [HttpPost("updateContact/{quoteId}")]
+        public async Task UpdateContact(Guid quoteId)
+        {
+            var quote = new Quote( quoteId, new List<Item>(), new Contact("test", "example@example.com")); //get existing quote from db
+
+            // quote stuff sent through headers
+            quote.EditContact(new Contact("kevin rud", "kevin07@hotmail.com"));
         }
     }
 

@@ -13,8 +13,8 @@ namespace QuoteAPI.Tests
         public void GivenQuote_WhenAddItem_ThenHasItem()
         {
             //arrange
-            var quote = new Quote(Guid.NewGuid(), new List<Item>());
-            var quoteItem = new Item("test", 10.00);
+            var quote = new Quote(Guid.NewGuid(), new List<Item>(), new Contact("test", "example@example.com"));
+            var quoteItem = new Item(new Guid(),  "test", 10.00);
 
             //act
             quote.AddQuoteItem(quoteItem);
@@ -27,8 +27,8 @@ namespace QuoteAPI.Tests
         public void GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem()
         {
             //arrange
-            var quoteItem = new Item("test", 10.00);
-            var quote = new Quote(Guid.NewGuid(), new List<Item>());
+            var quoteItem = new Item(new Guid(), "test", 10.00);
+            var quote = new Quote(Guid.NewGuid(), new List<Item>(), new Contact("test", "example@example.com"));
             quote.AddQuoteItem(quoteItem);
 
             //act
@@ -44,8 +44,8 @@ namespace QuoteAPI.Tests
         public void GivenQuoteWithValidItem_WhenUpdatePrice_ThenHaveNewPrice()
         {
             //arrange
-            var quoteItem = new Item("test", 10.00);
-            var quote = new Quote(Guid.NewGuid(), new List<Item>() { quoteItem });
+            var quoteItem = new Item(new Guid(),"test", 10.00);
+            var quote = new Quote(Guid.NewGuid(), new List<Item>() { quoteItem }, new Contact("test", "example@example.com"));
 
             //act
             quote.UpdatePriceOnQuoteItem(quoteItem.Message, 14.00);
@@ -58,8 +58,8 @@ namespace QuoteAPI.Tests
         public void GivenQuote_WhenAddItem_ThenHaveDraftItem()
         {
             //arrange
-            var quoteItem = new Item("test", 10.00);
-            var quote = new Quote(Guid.NewGuid(), new List<Item>());
+            var quoteItem = new Item(new Guid(),"test", 10.00);
+            var quote = new Quote(Guid.NewGuid(), new List<Item>(), new Contact("test", "example@example.com"));
 
             //act
             quote.AddQuoteItem(quoteItem);
@@ -72,8 +72,8 @@ namespace QuoteAPI.Tests
         public void GivenQuote_WhenAddItem_ThenHasNoFinalisedItem()
         {
             //arrange
-            var quoteItem = new Item("test", 10.00);
-            var quote = new Quote(Guid.NewGuid(), new List<Item>());
+            var quoteItem = new Item(new Guid(),"test", 10.00);
+            var quote = new Quote(Guid.NewGuid(), new List<Item>(), new Contact("test", "example@example.com"));
 
             //act
             quote.AddQuoteItem(quoteItem);
@@ -86,8 +86,8 @@ namespace QuoteAPI.Tests
         public void GivenQuoteWithDraftItem_WhenFinaliseItem_ItemIsNowFinalisedAndNotDraft()
         {
             //arrange
-            var item = new Item("test", 10.00);
-            var quote = new Quote(Guid.NewGuid(), new List<Item>());
+            var item = new Item(new Guid(),"test", 10.00);
+            var quote = new Quote(Guid.NewGuid(), new List<Item>(), new Contact("test", "example@example.com"));
             quote.AddQuoteItem(item);
 
             //act

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J9Bmgih5lIrGq2+cYlMoUcN7ygX3FtZ05mIjmMCHXpPzAPOgkcCRATPIKMatEDwZFExedy3dHp/QZCWqQZzMJA==",
+  "dgSpecHash": "M3mBRRUrieJDUjLNhzDfxj72sQT7uEMNHwoGagX9wDys8E8AXMBmcUbBNEFOiKo+dvEGOZ2ibWSFPbb/Zg4pEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\matt_ddd2\\quoteapi\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\mark.janssen-vooles\\code\\tutorials\\Matt_DDD2\\quoteAPI\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
