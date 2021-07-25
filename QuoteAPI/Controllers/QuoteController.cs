@@ -28,21 +28,26 @@ namespace QuoteAPI
             _eventBus = eventBus;
         }
 
+        // ENDPOINTS:
+        // [DONE] /api/quote/quotes => GET all
+        // /api/quote/newQuote => POST + create
+        // /api/quote/{quoteId}/newDraftItem => POST + create
+        // /api/quote/{quoteId}/updateDraftItem/{draftItemId} => PUT + update
+        // /api/quote/{quoteId}/finaliseAndSendItem/{draftItemId} => PUT + update (to non-draft)
+        // /api/quote/{quoteId}/delete => DELETE quote
+        // /api/quote/{quoteId}/{draftItemId}/delete => DELETE draft item
+
+        // anything missing? yeah... editing quote?
+
+        // ======
+
+        // /api/quote/quotes => GET all
+        [HttpGet("quotes")]
         public IEnumerable<Quote> GetQuotes()
         {
+            // find a way to seed some data, even just one quote? do this in the repository!
+
             return _repository.GetQuotes();
-        }
-
-        public Quote GetQuote(Guid id)
-        {
-            return _repository.GetQuote(id);
-        }
-
-        public void AddItemToQuote(Guid id, Item newItem)
-        {
-            var quote = _repository.GetQuote(id);
-            quote.AddQuoteItem(newItem);
-            _repository.Save(quote);
         }
 
         [HttpPost("updateQuoteItemPrice/{quoteId}")]
@@ -68,6 +73,18 @@ namespace QuoteAPI
         {
             var quote = _repository.GetQuote(id);
             quote.EditContact(contact);
+            _repository.Save(quote);
+        }
+
+        public Quote GetQuote(Guid id)
+        {
+            return _repository.GetQuote(id);
+        }
+
+        public void AddItemToQuote(Guid id, Item newItem)
+        {
+            var quote = _repository.GetQuote(id);
+            quote.AddQuoteItem(newItem);
             _repository.Save(quote);
         }
     }

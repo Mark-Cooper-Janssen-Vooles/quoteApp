@@ -12,6 +12,15 @@ namespace QuoteAPI.DataAccessLayer
         public Repository()
         {
             _quotes = new Dictionary<Guid, Quote>();
+            AddSeededQuote();
+        }
+
+        private void AddSeededQuote()
+        {
+            var guid = Guid.NewGuid();
+            var seedItems = new List<Item>() {new Item(Guid.NewGuid(), "Seeded quote", 12.99)};
+            var seedContact = new Contact("mark", "test@test.com");
+            _quotes.Add(guid, new Quote(guid, seedItems, seedContact));
         }
 
         public Repository(List<Quote> quotes)
