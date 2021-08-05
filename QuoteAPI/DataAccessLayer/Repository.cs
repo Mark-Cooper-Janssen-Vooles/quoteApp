@@ -17,6 +17,7 @@ namespace QuoteAPI.DataAccessLayer
 
         private void AddSeededQuote()
         {
+            // seeding some data, remove this eventually
             var guid = Guid.NewGuid();
             var seedItems = new List<Item>() {new Item(Guid.NewGuid(), "Seeded quote", 12.99)};
             var seedContact = new Contact("mark", "test@test.com");

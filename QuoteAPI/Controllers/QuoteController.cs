@@ -43,11 +43,11 @@ namespace QuoteAPI
 
         // /api/quote/quotes => GET all
         [HttpGet("quotes")]
-        public IEnumerable<Quote> GetQuotes()
+        public ActionResult<IEnumerable<Quote>> GetQuotes()
         {
-            // find a way to seed some data, even just one quote? do this in the repository!
+            var json = JsonConvert.SerializeObject(_repository.GetQuotes());
 
-            return _repository.GetQuotes();
+            return Ok(json);
         }
 
         [HttpPost("updateQuoteItemPrice/{quoteId}")]
