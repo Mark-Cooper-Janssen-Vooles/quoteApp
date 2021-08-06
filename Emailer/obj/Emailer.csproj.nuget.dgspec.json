@@ -45,10 +45,6 @@
             "MediatR": {
               "target": "Package",
               "version": "[9.0.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
-              "target": "Package",
-              "version": "[6.0.0-preview.6.21355.2, )"
             }
           },
           "imports": [

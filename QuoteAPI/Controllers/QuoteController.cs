@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.SQS;
@@ -29,7 +31,6 @@ namespace QuoteAPI
         [HttpGet("quotes")]
         public ActionResult<IEnumerable<Quote>> GetQuotes()
         {
-            var hmm = _repository.GetQuotes();
             var json = JsonConvert.SerializeObject(_repository.GetQuotes());
 
             return Ok(json);
@@ -37,10 +38,16 @@ namespace QuoteAPI
 
         // /api/quote/quotes
         [HttpPost("quotes")]
-        public ActionResult<IEnumerable<Quote>> CreateQuote(Contact contact)
+        public async Task<ActionResult> CreateQuote()
         {
-            var contactInfo = contact;
-            //var json = JsonConvert.SerializeObject(_repository.GetQuotes());
+            Contact contact;
+            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            {
+                string rawValue = await reader.ReadToEndAsync();
+                contact = JsonConvert.DeserializeObject<Contact>(rawValue);
+            }
+
+            _repository.CreateQuote(contact);
 
             return Ok();
         }

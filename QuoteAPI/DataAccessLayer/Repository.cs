@@ -9,10 +9,15 @@ namespace QuoteAPI.DataAccessLayer
     {
         private readonly Dictionary<Guid, Quote> _quotes;
 
-        public Repository()
+        public Repository() // every time i hit the endpoints it comes here??? just want to inject this once and have it in memory
         {
             _quotes = new Dictionary<Guid, Quote>();
             AddSeededQuote(); // seeding some data, remove this eventually
+        }
+
+        public Repository(List<Quote> quotes)
+        {
+            _quotes =  quotes.ToDictionary(x => x.Id);;
         }
 
         private void AddSeededQuote()
@@ -23,14 +28,15 @@ namespace QuoteAPI.DataAccessLayer
             _quotes.Add(guid, new Quote(guid, seedItems, seedContact));
         }
 
-        public Repository(List<Quote> quotes)
-        {
-            _quotes =  quotes.ToDictionary(x => x.Id);;
-        }
-
         public IEnumerable<Quote> GetQuotes()
         {
             return _quotes.Select(pair => pair.Value);
+        }
+
+        public void CreateQuote(Contact contact)
+        {
+            var guid = Guid.NewGuid();
+            _quotes.Add(guid, new Quote(guid, new List<Item>(), contact));
         }
 
         public Quote GetQuote(Guid id)
