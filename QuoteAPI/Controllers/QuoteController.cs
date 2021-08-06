@@ -60,14 +60,14 @@ namespace QuoteAPI
             using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
             {
                 string rawValue = await reader.ReadToEndAsync();
-                newItem = JsonConvert.DeserializeObject<Item>(rawValue); // theres an issue here with the price
+                newItem = JsonConvert.DeserializeObject<Item>(rawValue);
             }
 
             var quote = _repository.GetQuote(id);
             quote.AddQuoteItem(newItem);
             _repository.Save(quote);
 
-            return Ok();
+            return StatusCode(201);
         }
 
         [HttpPost("updateQuoteItemPrice/{quoteId}")]

@@ -31,12 +31,13 @@ namespace Domain.Models.Quote
             Contact.Email = newContact.Email;
         }
 
-        public void AddQuoteItem(Item newItem)
+        public bool AddQuoteItem(Item newItem)
         {
             if (DraftItems.Exists(x => x.Message == newItem.Message))
-                return;
+                return false;
 
             DraftItems.Add(newItem);
+            return true;
         }
 
         public void UpdatePriceOnQuoteItem(string quoteItemMessage, double newPrice)

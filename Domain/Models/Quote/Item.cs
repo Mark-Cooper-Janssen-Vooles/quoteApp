@@ -15,7 +15,7 @@ namespace Domain.Models.Quote
 
         public Item(Guid id, string message, double price )
         {
-            Id = id;
+            Id = Guid.NewGuid(); // when not using a DB
             Message = message;
             Price = price;
         }
