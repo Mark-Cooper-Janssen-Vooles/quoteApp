@@ -31,7 +31,6 @@ namespace QuoteAPI.DataAccessLayer
 
         public IEnumerable<Quote> GetQuotes()
         {
-            var hmm = _quotes.Select(pair => pair.Value);
             return _quotes.Select(pair => pair.Value);
         }
 

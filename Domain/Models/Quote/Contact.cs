@@ -4,8 +4,8 @@ namespace Domain.Models.Quote
 {
     public class Contact
     {
-        public string Name;
-        public string Email;
+        public string Name { set; get; }
+        public string Email { set; get; }
 
         public Contact(string name, string email)
         {

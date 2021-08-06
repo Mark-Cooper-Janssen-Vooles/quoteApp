@@ -29,23 +29,22 @@ namespace QuoteAPI
 
         // /api/quote/quotes => GET all
         [HttpGet("quotes")]
-        public ActionResult<IEnumerable<Quote>> GetQuotes()
+        public IActionResult GetQuotes()
         {
-            var json = JsonConvert.SerializeObject(_repository.GetQuotes());
-
-            return Ok(json);
+            return new OkObjectResult(_repository.GetQuotes());
+            // return a response object instead so if the domain is changed the receiving API doesn't get the wrong data (compile time error vs runtime)
         }
 
         // /api/quote/quotes
         [HttpPost("quotes")]
-        public async Task<ActionResult> CreateQuote()
+        public async Task<ActionResult> CreateQuote(Contact contact) // use 'ContactRequestDTO' to decouple using gets and setters in domain => DTOs live in API area.
         {
-            Contact contact;
-            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-            {
-                string rawValue = await reader.ReadToEndAsync();
-                contact = JsonConvert.DeserializeObject<Contact>(rawValue);
-            }
+            //Contact contact;
+            // using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            // {
+            //     string rawValue = await reader.ReadToEndAsync();
+            //     contact = JsonConvert.DeserializeObject<Contact>(rawValue);
+            // }
 
             _repository.CreateQuote(contact);
 
@@ -85,8 +84,8 @@ namespace QuoteAPI
             _repository.Save(quote);
         }
 
-        [HttpPost("sendQuote/{quoteId}")]
-        public async Task SendQuote(Guid id)
+        [HttpPut("quotes/{id}/draft-item/{itemId}/finalise")]
+        public async void FinaliseAndSendQuote(Guid id, Guid itemId)
         {
             var quote = _repository.GetQuote(id);
             if (quote.Id != Guid.Empty)
@@ -96,7 +95,7 @@ namespace QuoteAPI
         }
 
         [HttpPost("updateContact/{quoteId}")]
-        public void UpdateContact(Guid id, Contact contact)
+        public void UpdateContact(Guid id, Contact contact) // don't have button / form hooked up in the UI for this endpoint yet
         {
             var quote = _repository.GetQuote(id);
             quote.EditContact(contact);
