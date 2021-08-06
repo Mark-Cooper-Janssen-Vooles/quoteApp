@@ -30,7 +30,8 @@ namespace QuoteAPI
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.AllowAnyOrigin();
+                    builder.AllowAnyOrigin()
+                        .AllowAnyHeader();
                 });
             });
             services.AddControllers();

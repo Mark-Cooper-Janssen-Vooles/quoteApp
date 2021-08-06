@@ -1,12 +1,16 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace Domain.Models.Quote
 {
+    [DataContract]
     public class Item
     {
-        // need to add Id for each item
+        [DataMember]
         public string Message { get; }
+        [DataMember]
         public double Price { get; private set; }
+        [DataMember]
         public Guid Id { get; }
 
         public Item(Guid id, string message, double price )

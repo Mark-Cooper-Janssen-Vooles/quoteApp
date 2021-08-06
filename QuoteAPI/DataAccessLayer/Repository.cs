@@ -22,14 +22,16 @@ namespace QuoteAPI.DataAccessLayer
 
         private void AddSeededQuote()
         {
-            var guid = Guid.NewGuid();
+            var guid = new Guid("5233fecd-1320-4916-a5ba-f2c829d19e63");
             var seedItems = new List<Item>() {new Item(Guid.NewGuid(), "Seeded quote", 12.99)};
             var seedContact = new Contact("mark", "test@test.com");
-            _quotes.Add(guid, new Quote(guid, seedItems, seedContact));
+            var quote = new Quote(guid, seedItems, seedContact);
+            _quotes.Add(guid,quote);
         }
 
         public IEnumerable<Quote> GetQuotes()
         {
+            var hmm = _quotes.Select(pair => pair.Value);
             return _quotes.Select(pair => pair.Value);
         }
 

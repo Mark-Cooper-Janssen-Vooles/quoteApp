@@ -1,14 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 
 namespace Domain.Models.Quote
 {
+    [DataContract]
     public class Quote
     {
+        [DataMember]
         public Contact Contact { get; }
+        [DataMember]
         public Guid Id { get; }
+        [DataMember]
         private List<Item> Items { get; }
+        [DataMember]
         private List<Item> DraftItems { get; }
 
         public Quote(Guid id, List<Item> items, Contact contact)

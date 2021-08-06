@@ -31,6 +31,7 @@ namespace QuoteAPI
         [HttpGet("quotes")]
         public ActionResult<IEnumerable<Quote>> GetQuotes()
         {
+            var response = _repository.GetQuotes();
             var json = JsonConvert.SerializeObject(_repository.GetQuotes());
 
             return Ok(json);
@@ -48,6 +49,24 @@ namespace QuoteAPI
             }
 
             _repository.CreateQuote(contact);
+
+            return StatusCode(201);
+        }
+
+        // api/quote/quotes/{id}/draft-item
+        [HttpPost("quotes/{id}/draft-item")]
+        public async Task<ActionResult> AddItemToQuote(Guid id)
+        {
+            Item newItem;
+            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            {
+                string rawValue = await reader.ReadToEndAsync();
+                newItem = JsonConvert.DeserializeObject<Item>(rawValue); // theres an issue here with the price
+            }
+
+            var quote = _repository.GetQuote(id);
+            quote.AddQuoteItem(newItem);
+            _repository.Save(quote);
 
             return Ok();
         }
@@ -81,13 +100,6 @@ namespace QuoteAPI
         public Quote GetQuote(Guid id)
         {
             return _repository.GetQuote(id);
-        }
-
-        public void AddItemToQuote(Guid id, Item newItem)
-        {
-            var quote = _repository.GetQuote(id);
-            quote.AddQuoteItem(newItem);
-            _repository.Save(quote);
         }
     }
 
