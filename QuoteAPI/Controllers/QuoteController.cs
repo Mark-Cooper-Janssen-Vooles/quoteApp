@@ -31,7 +31,6 @@ namespace QuoteAPI
         [HttpGet("quotes")]
         public ActionResult<IEnumerable<Quote>> GetQuotes()
         {
-            var response = _repository.GetQuotes();
             var json = JsonConvert.SerializeObject(_repository.GetQuotes());
 
             return Ok(json);
