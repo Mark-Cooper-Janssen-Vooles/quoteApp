@@ -7,7 +7,7 @@ namespace Domain.Models.Quote
     public class Item
     {
         [DataMember]
-        public string Message { get; }
+        public string Message { get; private set; }
         [DataMember]
         public double Price { get; private set; }
         [DataMember]
@@ -23,6 +23,11 @@ namespace Domain.Models.Quote
         public void UpdatePrice(double newPrice)
         {
             Price = newPrice;
+        }
+
+        public void UpdateMessage(string newMessage)
+        {
+            Message = newMessage;
         }
     }
 }

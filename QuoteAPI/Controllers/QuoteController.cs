@@ -70,11 +70,18 @@ namespace QuoteAPI
             return StatusCode(201);
         }
 
-        [HttpPost("updateQuoteItemPrice/{quoteId}")]
-        public void UpdateQuoteItemPrice(Guid id, string quoteItemMessage, double newPrice)
+        [HttpPut("quotes/{id}/draft-item/")]
+        public async void UpdateDraftQuoteItem(Guid id)
         {
             var quote = _repository.GetQuote(id);
-            quote.UpdatePriceOnQuoteItem(quoteItemMessage, newPrice);
+
+            Item updatedItem;
+            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            {
+                string rawValue = await reader.ReadToEndAsync();
+                updatedItem = JsonConvert.DeserializeObject<Item>(rawValue);
+            }
+            quote.UpdateDraftQuoteItemPrice(updatedItem);
             _repository.Save(quote);
         }
 

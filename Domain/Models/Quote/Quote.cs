@@ -40,10 +40,11 @@ namespace Domain.Models.Quote
             return true;
         }
 
-        public void UpdatePriceOnQuoteItem(string quoteItemMessage, double newPrice)
+        public void UpdateDraftQuoteItemPrice(Item newItem)
         {
-            var quoteItem = Items.FirstOrDefault(x => x.Message == quoteItemMessage);
-            quoteItem?.UpdatePrice(newPrice);
+            var quoteItem = DraftItems.FirstOrDefault(x => x.Message == newItem.Message);
+            quoteItem?.UpdatePrice(newItem.Price);
+            quoteItem?.UpdateMessage(newItem.Message);
         }
 
         public bool HasDraftItems()
