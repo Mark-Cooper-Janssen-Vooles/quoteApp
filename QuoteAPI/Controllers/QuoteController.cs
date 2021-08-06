@@ -1,14 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Domain.Events;
 using Domain.Models.Quote;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using QuoteAPI.DataAccessLayer;
@@ -28,26 +25,24 @@ namespace QuoteAPI
             _eventBus = eventBus;
         }
 
-        // ENDPOINTS:
-        // [DONE] /api/quote/quotes => GET all
-        // /api/quote/newQuote => POST + create
-        // /api/quote/{quoteId}/newDraftItem => POST + create
-        // /api/quote/{quoteId}/updateDraftItem/{draftItemId} => PUT + update
-        // /api/quote/{quoteId}/finaliseAndSendItem/{draftItemId} => PUT + update (to non-draft)
-        // /api/quote/{quoteId}/delete => DELETE quote
-        // /api/quote/{quoteId}/{draftItemId}/delete => DELETE draft item
-
-        // anything missing? yeah... editing quote?
-
-        // ======
-
         // /api/quote/quotes => GET all
         [HttpGet("quotes")]
         public ActionResult<IEnumerable<Quote>> GetQuotes()
         {
+            var hmm = _repository.GetQuotes();
             var json = JsonConvert.SerializeObject(_repository.GetQuotes());
 
             return Ok(json);
+        }
+
+        // /api/quote/quotes
+        [HttpPost("quotes")]
+        public ActionResult<IEnumerable<Quote>> CreateQuote(Contact contact)
+        {
+            var contactInfo = contact;
+            //var json = JsonConvert.SerializeObject(_repository.GetQuotes());
+
+            return Ok();
         }
 
         [HttpPost("updateQuoteItemPrice/{quoteId}")]
