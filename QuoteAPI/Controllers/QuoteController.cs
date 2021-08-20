@@ -62,15 +62,15 @@ namespace QuoteAPI
             _repository.Save(quote);
         }
 
-        [HttpPut("quotes/{id}/draft-item/{itemId}/finalise")]
-        public async void FinaliseAndSendQuote(Guid id, Guid itemId)
+        [HttpPut("quotes/{quoteId}/draft-item/{itemId}/finalise")]
+        public async void FinaliseAndSendQuote(Guid quoteId, Guid itemId)
         {
-            var quote = _repository.GetQuote(id);
-            if (quote.Id != Guid.Empty) //also check that quote item id exists
-            {
-                await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
-                // change the quote to non-draft
-            }
+            var quote = _repository.GetQuote(quoteId);
+
+            if (quote.Id == Guid.Empty) return;
+
+            // await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
+            quote.FinaliseDraftItem(itemId);
         }
 
         [HttpPost("updateContact/{quoteId}")]
