@@ -10,5 +10,6 @@ namespace QuoteAPI.DataAccessLayer
         void CreateQuote(Contact contact);
         Quote GetQuote(Guid id);
         void Save(Quote quote);
+        void DeleteQuote(Guid id);
     }
 }

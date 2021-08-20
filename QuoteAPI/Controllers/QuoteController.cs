@@ -69,17 +69,31 @@ namespace QuoteAPI
 
             if (quote.Id == Guid.Empty) return;
 
-            // await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
+            // await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email)); // <=== get this working!
             quote.FinaliseDraftItem(itemId);
         }
 
-        [HttpPost("updateContact/{quoteId}")]
-        public void UpdateContact(Guid id, Contact contact) // don't have button / form hooked up in the UI for this endpoint yet
+        [HttpDelete("quotes/{quoteId}/")]
+        public void DeleteQuote(Guid quoteId)
         {
-            var quote = _repository.GetQuote(id);
-            quote.EditContact(contact);
-            _repository.Save(quote);
+            _repository.DeleteQuote(quoteId);
         }
+
+        [HttpDelete("quotes/{quoteId}/draft-item/{itemId}")]
+        public void DeleteDraftItem(Guid quoteId, Guid itemId)
+        {
+            var quote = _repository.GetQuote(quoteId);
+            quote.DeleteDraftItem(itemId);
+        }
+
+        // don't have button / form hooked up in the UI for this endpoint yet
+        // [HttpPost("updateContact/{quoteId}")]
+        // public void UpdateContact(Guid id, Contact contact)
+        // {
+        //     var quote = _repository.GetQuote(id);
+        //     quote.EditContact(contact);
+        //     _repository.Save(quote);
+        // }
 
         public Quote GetQuote(Guid id)
         {

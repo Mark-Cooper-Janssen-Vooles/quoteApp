@@ -56,5 +56,10 @@ namespace QuoteAPI.DataAccessLayer
         {
             _quotes[quote.Id] = quote;
         }
+
+        public void DeleteQuote(Guid id)
+        {
+            _quotes.Remove(id);
+        }
     }
 }
