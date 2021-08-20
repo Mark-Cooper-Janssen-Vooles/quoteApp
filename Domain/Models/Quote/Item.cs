@@ -3,17 +3,15 @@ using System.Runtime.Serialization;
 
 namespace Domain.Models.Quote
 {
-    [DataContract]
     public class Item
     {
-        [DataMember]
-        public string Message { get; private set; }
-        [DataMember]
-        public double Price { get; private set; }
-        [DataMember]
-        public Guid Id { get; }
+        public string Message { get; set; }
+        public double Price { get; set; }
+        public Guid Id { get; set; }
 
-        public Item(Guid id, string message, double price )
+        public Item() { }
+
+        public Item(string message, double price )
         {
             Id = Guid.NewGuid(); // when not using a DB
             Message = message;

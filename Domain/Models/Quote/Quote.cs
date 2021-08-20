@@ -62,13 +62,14 @@ namespace Domain.Models.Quote
             return Id;
         }
 
-        public void FinaliseDraftItem(Item item)
+        public void FinaliseDraftItem(Guid itemId)
         {
-            if (!DraftItems.Exists(x => x.Message == item.Message))
+            if (!DraftItems.Exists(x => x.Id == itemId))
                 return;
 
-            DraftItems.RemoveAll(x => x.Message == item.Message);
+            var item = DraftItems[DraftItems.FindIndex(x => x.Id == itemId)];
             Items.Add(item);
+            DraftItems.RemoveAll(x => x.Id == itemId);
         }
 
         public void Finalise()
