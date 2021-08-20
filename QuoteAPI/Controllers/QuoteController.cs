@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +10,7 @@ using Domain.Models.Quote;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using QuoteAPI.DataAccessLayer;
+using QuoteAPI.DTOs;
 
 namespace QuoteAPI
 {
@@ -37,49 +37,27 @@ namespace QuoteAPI
 
         // /api/quote/quotes
         [HttpPost("quotes")]
-        public async Task<ActionResult> CreateQuote(Contact contact) // use 'ContactRequestDTO' to decouple using gets and setters in domain => DTOs live in API area.
+        public void CreateQuote(Contact contactRequest)
         {
-            //Contact contact;
-            // using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-            // {
-            //     string rawValue = await reader.ReadToEndAsync();
-            //     contact = JsonConvert.DeserializeObject<Contact>(rawValue);
-            // }
-
-            _repository.CreateQuote(contact);
-
-            return StatusCode(201);
+            _repository.CreateQuote(contactRequest);
         }
 
         // api/quote/quotes/{id}/draft-item
         [HttpPost("quotes/{id}/draft-item")]
-        public async Task<ActionResult> AddItemToQuote(Guid id)
+        public void AddItemToQuote(Guid id, ItemRequestDTO item)
         {
-            Item newItem;
-            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-            {
-                string rawValue = await reader.ReadToEndAsync();
-                newItem = JsonConvert.DeserializeObject<Item>(rawValue);
-            }
+            var newItem = new Item(item.Message, item.Price);
 
             var quote = _repository.GetQuote(id);
             quote.AddQuoteItem(newItem);
             _repository.Save(quote);
-
-            return StatusCode(201);
         }
 
         [HttpPut("quotes/{id}/draft-item/")]
-        public async void UpdateDraftQuoteItem(Guid id)
+        public void UpdateDraftQuoteItem(Guid id, Item updatedItem)
         {
             var quote = _repository.GetQuote(id);
 
-            Item updatedItem;
-            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-            {
-                string rawValue = await reader.ReadToEndAsync();
-                updatedItem = JsonConvert.DeserializeObject<Item>(rawValue);
-            }
             quote.UpdateDraftQuoteItemPrice(updatedItem);
             _repository.Save(quote);
         }
@@ -88,9 +66,10 @@ namespace QuoteAPI
         public async void FinaliseAndSendQuote(Guid id, Guid itemId)
         {
             var quote = _repository.GetQuote(id);
-            if (quote.Id != Guid.Empty)
+            if (quote.Id != Guid.Empty) //also check that quote item id exists
             {
                 await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
+                // change the quote to non-draft
             }
         }
 

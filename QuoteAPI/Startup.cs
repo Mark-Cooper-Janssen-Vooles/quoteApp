@@ -35,7 +35,7 @@ namespace QuoteAPI
                         .AllowAnyMethod();
                 });
             });
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddScoped<IEventBus, EventBus>();
             services.AddSingleton<IRepository, Repository>();
         }
