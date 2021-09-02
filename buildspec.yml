@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - dotnet restore
+      - npm test
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - public/**/*
+    - src/**/* #should this be build?
+    - package.json
+    - babel.config.json
+    #- appspec.yml
