@@ -3,10 +3,12 @@ version: 0.2
 phases:
   install:
     runtime-versions:
+      docker: latest
       dotnet: 3.1
   pre_build:
     commands:
-    - dotnet restore
+      - echo Build started on `date`
+      - dotnet restore
   build:
     commands:
       - echo Build started on `date`
