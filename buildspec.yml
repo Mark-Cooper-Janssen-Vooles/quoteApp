@@ -1,4 +1,5 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
@@ -14,6 +15,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+
 artifacts:
   files:
     - ./publish_output/**/**
