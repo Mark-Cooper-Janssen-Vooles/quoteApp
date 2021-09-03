@@ -18,4 +18,4 @@ phases:
 
 artifacts:
   files:
-    - ./publish_output/**/**
+    - ./**/**
