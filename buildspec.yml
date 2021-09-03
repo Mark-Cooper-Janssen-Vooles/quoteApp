@@ -1,18 +1,16 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+    - dotnet restore
   build:
     commands:
       - echo Build started on `date`
-      - dotnet restore
-      - npm test
+      - dotnet publish -c release -o ./publish_output
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - public/**/*
-    - src/**/* #should this be build?
-    - package.json
-    - babel.config.json
-    #- appspec.yml
+    - ./publish_output/**/**
