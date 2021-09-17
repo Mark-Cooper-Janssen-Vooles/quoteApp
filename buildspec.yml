@@ -11,7 +11,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - dotnet publish -c release -o .
+      - dotnet publish -c release
   post_build:
     commands:
       - echo Build completed on `date`
