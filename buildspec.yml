@@ -11,10 +11,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - dotnet publish -c release -o ./
+      - dotnet publish -c release -o ./site
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - ./**/**
+    - ./site/**/**
