@@ -1,1 +1,0 @@
-api: dotnet ./publish_output/QuoteAPI.dll
