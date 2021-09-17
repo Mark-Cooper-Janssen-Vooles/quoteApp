@@ -12,6 +12,7 @@ phases:
     commands:
       - echo Build started on `date`
       - dotnet publish -c release -o ./publish_output
+      - cp ./Procfile ./publish_output
   post_build:
     commands:
       - echo Build completed on `date`
