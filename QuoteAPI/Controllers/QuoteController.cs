@@ -74,16 +74,20 @@ namespace QuoteAPI
         }
 
         [HttpDelete("quotes/{quoteId}/")]
-        public void DeleteQuote(Guid quoteId)
+        public IActionResult DeleteQuote(Guid quoteId)
         {
             _repository.DeleteQuote(quoteId);
+
+            return new StatusCodeResult(200);
         }
 
         [HttpDelete("quotes/{quoteId}/draft-item/{itemId}")]
-        public void DeleteDraftItem(Guid quoteId, Guid itemId)
+        public IActionResult DeleteDraftItem(Guid quoteId, Guid itemId)
         {
             var quote = _repository.GetQuote(quoteId);
             quote.DeleteDraftItem(itemId);
+
+            return new StatusCodeResult(200);
         }
 
         // don't have button / form hooked up in the UI for this endpoint yet
