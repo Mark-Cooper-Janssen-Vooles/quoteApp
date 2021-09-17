@@ -1,2 +1,1 @@
-api: dotnet ./QuoteAPI.dll
-email: dotnet ./Emailer.dll
+api: dotnet ./publish_output/QuoteAPI.dll
