@@ -66,8 +66,9 @@ namespace QuoteAPI
 
             if (quote.Id == Guid.Empty || draftItem.Id == Guid.Empty) return;
 
-            await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
             quote.FinaliseDraftItem(itemId);
+
+            await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
         }
 
         [HttpDelete("quotes/{quoteId}/")]
