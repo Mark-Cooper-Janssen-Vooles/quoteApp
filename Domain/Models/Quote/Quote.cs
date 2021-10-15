@@ -72,6 +72,13 @@ namespace Domain.Models.Quote
             DraftItems.RemoveAll(x => x.Id == itemId);
         }
 
+        public Item GetDraftItem(Guid itemId)
+        {
+            var draftItem = DraftItems[DraftItems.FindIndex(x => x.Id == itemId)];
+
+            return draftItem;
+        }
+
         public void DeleteDraftItem(Guid itemId)
         {
             if (!DraftItems.Exists(x => x.Id == itemId))

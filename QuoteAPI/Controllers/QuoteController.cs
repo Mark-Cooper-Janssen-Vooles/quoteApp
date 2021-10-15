@@ -66,10 +66,11 @@ namespace QuoteAPI
         public async void FinaliseAndSendQuote(Guid quoteId, Guid itemId)
         {
             var quote = _repository.GetQuote(quoteId);
+            var draftItem = quote.GetDraftItem(itemId);
 
-            if (quote.Id == Guid.Empty) return;
+            if (quote.Id == Guid.Empty || draftItem.Id == Guid.Empty) return;
 
-            // await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email)); // <=== get this working!
+            await _eventBus.Publish(new ItemSent(draftItem, quote.Contact.Email));
             quote.FinaliseDraftItem(itemId);
         }
 
@@ -107,16 +108,16 @@ namespace QuoteAPI
 
     public interface IEventBus
     {
-        Task Publish(QuoteSent quoteSent);
+        Task Publish(ItemSent itemSent);
     }
 
     class EventBus : IEventBus
     {
-        public async Task Publish(QuoteSent quoteSent)
+        public async Task Publish(ItemSent itemSent)
         {
             // publish message to SQS
             var client = new AmazonSQSClient(RegionEndpoint.APSoutheast2);
-            var request = new SendMessageRequest("https://sqs.ap-southeast-2.amazonaws.com/534833720216/QuoteAPI-Email", JsonConvert.SerializeObject(quoteSent));
+            var request = new SendMessageRequest("https://sqs.ap-southeast-2.amazonaws.com/534833720216/QuoteAPI-Email", JsonConvert.SerializeObject(itemSent));
             await client.SendMessageAsync(request);
         }
     }
