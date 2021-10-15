@@ -2,13 +2,9 @@ using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using Amazon;
-using Amazon.SQS;
-using Amazon.SQS.Model;
 using Domain.Events;
 using Domain.Models.Quote;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using QuoteAPI.DataAccessLayer;
 using QuoteAPI.DTOs;
 
@@ -103,22 +99,6 @@ namespace QuoteAPI
         public Quote GetQuote(Guid id)
         {
             return _repository.GetQuote(id);
-        }
-    }
-
-    public interface IEventBus
-    {
-        Task Publish(QuoteSent quoteSent);
-    }
-
-    class EventBus : IEventBus
-    {
-        public async Task Publish(QuoteSent quoteSent)
-        {
-            // publish message to SQS
-            var client = new AmazonSQSClient(RegionEndpoint.APSoutheast2);
-            var request = new SendMessageRequest("https://sqs.ap-southeast-2.amazonaws.com/534833720216/QuoteAPI-Email", JsonConvert.SerializeObject(quoteSent));
-            await client.SendMessageAsync(request);
         }
     }
 }
