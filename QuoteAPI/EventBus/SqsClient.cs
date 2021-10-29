@@ -17,6 +17,9 @@ namespace QuoteAPI
         public  Task SendMessageAsync(SendMessageRequest request)
         {
             return _amazonSqsClient.SendMessageAsync(request);
+            // note: will not send emails to all addresses, need to be AWS verified because my account is in the sandbox
+            // not worth applying to get it out
+            // details here: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html?icmpid=docs_ses_console
         }
     }
 }
