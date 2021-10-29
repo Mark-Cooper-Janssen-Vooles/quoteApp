@@ -65,7 +65,6 @@ namespace QuoteAPI
             var draftItem = quote.GetDraftItem(itemId);
 
             if (quote.Id == Guid.Empty || draftItem.Id == Guid.Empty) return;
-
             quote.FinaliseDraftItem(itemId);
 
             await _eventBus.Publish(new QuoteSent(quote, quote.Contact.Email));
