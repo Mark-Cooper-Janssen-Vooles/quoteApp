@@ -7,7 +7,6 @@ namespace QuoteAPI.DataAccessLayer
     public interface IRepository
     {
         IEnumerable<Quote> GetQuotes();
-        void CreateQuote(Contact contact);
         Quote GetQuote(Guid id);
         void Save(Quote quote);
         void DeleteQuote(Guid id);

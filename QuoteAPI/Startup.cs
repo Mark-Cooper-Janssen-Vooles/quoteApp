@@ -36,7 +36,7 @@ namespace QuoteAPI
             });
             services.AddControllers().AddNewtonsoftJson();
             services.AddScoped<IEventBus, EventBus>();
-            services.AddSingleton<IRepository, Repository>();
+            services.AddSingleton<IRepository, QuoteRepository>();
             services.AddSingleton<ISqsClient, SqsClient>();
         }
 
