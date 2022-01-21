@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.Runtime;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +28,12 @@ namespace QuoteAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var config = new AmazonDynamoDBConfig()
+            {
+                RegionEndpoint = RegionEndpoint.APSoutheast2
+            };
+            var dynamoDbClient = new AmazonDynamoDBClient(config);
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -34,10 +43,12 @@ namespace QuoteAPI
                         .AllowAnyMethod();
                 });
             });
+
             services.AddControllers().AddNewtonsoftJson();
             services.AddScoped<IEventBus, EventBus>();
             services.AddSingleton<IRepository, QuoteRepository>();
             services.AddSingleton<ISqsClient, SqsClient>();
+            services.AddSingleton<IAmazonDynamoDB>(dynamoDbClient);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
