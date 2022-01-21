@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,8 @@ namespace QuoteAPI
         [HttpPost("quotes")]
         public void CreateQuote(Contact contactRequest)
         {
-            _repository.CreateQuote(contactRequest);
+            var quote = new Quote(Guid.NewGuid(), new List<Item>(), contactRequest);
+            _repository.Save(quote);
         }
 
         // api/quote/quotes/{id}/draft-item

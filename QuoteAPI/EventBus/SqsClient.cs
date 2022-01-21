@@ -14,7 +14,7 @@ namespace QuoteAPI
             _amazonSqsClient = new AmazonSQSClient(RegionEndpoint.APSoutheast2);
         }
 
-        public  Task SendMessageAsync(SendMessageRequest request)
+        public Task SendMessageAsync(SendMessageRequest request)
         {
             return _amazonSqsClient.SendMessageAsync(request);
             // note: will not send emails to all addresses, need to be AWS verified because my account is in the sandbox
