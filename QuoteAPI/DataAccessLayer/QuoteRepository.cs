@@ -38,18 +38,24 @@ namespace QuoteAPI.DataAccessLayer
             return quotes;
         }
 
-        // public Quote GetQuote(Guid id)
-        // {
-        //     try
-        //     {
-        //         return _quotes[id];
-        //     }
-        //     catch
-        //     {
-        //         return new Quote(Guid.Empty, new List<Item>(), new Contact("", ""));
-        //     }
-        // }
-        //
+        public async Task<Quote> GetQuote(Guid id)
+        {
+            var request = new QueryRequest
+            {
+                TableName = "quoteDB4",
+                KeyConditionExpression = "entityType = :v_type and id = :v_id",
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+                {
+                    {":v_type", new AttributeValue { S = "quote" }},
+                    {":v_id", new AttributeValue { S = id.ToString() }}
+                },
+            };
+            var queryResponse = await _dynamoDbClient.QueryAsync(request);
+
+            var quotes = queryResponse.Items.Select(x => JsonConvert.DeserializeObject<Quote>(x["entity"].S));
+            return quotes.First();
+        }
+
         public async void Save(Quote quote)
         {
             var quoteString = JsonConvert.SerializeObject(quote);

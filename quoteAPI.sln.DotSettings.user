@@ -2,34 +2,29 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Users\mark.janssen-vooles\.nuget\packages\mediatr\9.0.0\lib\netstandard2.1\MediatR.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=09a8f419_002Dbb7c_002D41da_002D8ff1_002D4bc01ea3d304/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EventBusTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.EventBusTests&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=09a8f419_002Dbb7c_002D41da_002D8ff1_002D4bc01ea3d304/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EventBusTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.EventBusTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1e3eba36_002D01b1_002D4fb6_002Dba5b_002D8f5d061cf1c8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EventBusTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.EventBusTests&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1e3eba36_002D01b1_002D4fb6_002Dba5b_002D8f5d061cf1c8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EventBusTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.EventBusTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=298b4f8b_002Db9f1_002D4b7b_002Db53b_002De0ee0fa3ab0a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests" Presentation="&amp;lt;QuoteAPI.Tests&amp;gt;" /&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=298b4f8b_002Db9f1_002D4b7b_002Db53b_002De0ee0fa3ab0a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\mark.janssen-vooles\code\tutorials\Matt_DDD2\quoteAPI\QuoteAPI.Tests" Presentation="&amp;lt;QuoteAPI.Tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2e2e72fc_002D7a83_002D4d3e_002Da7d2_002Dc9a3d15efcc5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.QuoteTest.GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.QuoteTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2e2e72fc_002D7a83_002D4d3e_002Da7d2_002Dc9a3d15efcc5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.QuoteTest.GivenQuoteWithValidItem_WhenAddItem_ThenHaveOnlyOneItem&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.QuoteTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3cff7a9f_002Da112_002D4d2f_002D9603_002De4ff69ff48bf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UnitTest1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3cff7a9f_002Da112_002D4d2f_002D9603_002De4ff69ff48bf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UnitTest1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.UnitTest1&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d9e73d86_002De487_002D48c3_002Dbd4a_002D091577b1a1a0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GivenNoQuotesExist_WhenGetQuotes_ReturnsEmptyList" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.RepositoryTests.GivenNoQuotesExist_WhenGetQuotes_ReturnsEmptyList&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::58383C51-52D2-4A07-8568-77A145B1FD98::.NETCoreApp,Version=v3.1::QuoteAPI.Tests.RepositoryTests.GivenQuotesExist_WhenGetQuotes_ReturnsQuotes&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	</wpf:ResourceDictionary>

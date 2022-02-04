@@ -39,18 +39,20 @@ namespace QuoteAPI
             var quote = new Quote(Guid.NewGuid(), new List<Item>(), contactRequest);
             _repository.Save(quote);
         }
-        //
-        // // api/quote/quotes/{id}/draft-item
-        // [HttpPost("quotes/{id}/draft-item")]
-        // public void AddItemToQuote(Guid id, ItemRequestDTO item)
-        // {
-        //     var newItem = new Item(item.Message, item.Price);
-        //
-        //     var quote = _repository.GetQuote(id);
-        //     quote.AddQuoteItem(newItem);
-        //     _repository.Save(quote);
-        // }
-        //
+
+        // api/quote/quotes/{id}/draft-item
+        [HttpPost("quotes/{id}/draft-item")]
+        public void AddItemToQuote(Guid id, ItemRequestDTO item)
+        {
+            var newItem = new Item(item.Message, item.Price);
+
+            var quote = _repository.GetQuote(id).Result;
+            // _repository.AddQuoteItem(quote);
+
+            quote.AddQuoteItem(newItem);
+            _repository.Save(quote);
+        }
+
         // [HttpPut("quotes/{id}/draft-item/")]
         // public void UpdateDraftQuoteItem(Guid id, Item updatedItem)
         // {
